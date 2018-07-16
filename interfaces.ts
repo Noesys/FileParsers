@@ -1,4 +1,4 @@
-export type ParseTreeElement = RecordElement | SubRecordElement | Column | IgnoreLine | SkipLine | NextRecordElement | NextSubRecordElement;
+export type ParseTreeElement = RecordElement | SubRecordElement | Column | IgnoreLine | SkipLine | NextRecordElement | NextSubRecordElement | NextLine;
 
 export interface ParseError {
     line: number;
@@ -58,6 +58,11 @@ export interface Column {
 
 export interface IgnoreLine {
     action: "IgnoreLine";
+    line: number;
+}
+
+export interface NextLine {
+    action: "NextLine";
     line: number;
 }
 

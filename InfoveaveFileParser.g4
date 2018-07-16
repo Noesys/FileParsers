@@ -4,12 +4,13 @@ grammar InfoveaveFileParser;
  * Parser Rules
  */
 program       : (line| NEWLINE)+ EOF ;
-line          : (record | subrecord | column | COMMENT | ignoreline | nextrecord | nextsubrecord | skipline) NEWLINE;
+line          : (record | subrecord | column | COMMENT | ignoreline | nextrecord | nextsubrecord | nextline | skipline) NEWLINE;
 skipline      : SKIPLINE LINE BOF COLUMNIDENTIFIER ENDOFFILE COLUMNIDENTIFIER;
 record        : RECORD IDENTIFIER (BEGIN|END);
 column        : COLUMN IDENTIFIER COLUMNIDENTIFIER (COLUMNIDENTIFIER|EOL) (IGNORE)?;
 subrecord     : SUBRECORD IDENTIFIER (BEGIN|END) ;
 ignoreline    : IGNORE LINE;
+nextline      : NEXT LINE;
 nextrecord    : NEXT RECORD IDENTIFIER TILL (IDENTIFIER|SPECIALCHARWORD|EMPTYLINE|ENDOFFILE)+;
 nextsubrecord : NEXT SUBRECORD IDENTIFIER TILL (IDENTIFIER|SPECIALCHARWORD|EMPTYLINE)+;
 /*

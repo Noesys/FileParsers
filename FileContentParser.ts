@@ -8,9 +8,10 @@ export const ParseTextUsingTree = (text: string, tree: ParseTreeElement[]): Pars
     let eolCount = filter(tree, t => t.action === "Column" && t.end.content === "EOL").length;
     let subRecord = filter(tree, t => t.action === "SubRecord").length;
     let ignoreLine = filter(tree, t => t.action === "IgnoreLine").length;
+    let nextLine  = filter(tree, t => t.action === "NextLine").length;
 
     let useMultiLineMarkers = false;
-    if (eolCount > 1 || subRecord > 0 || ignoreLine > 0) {
+    if (eolCount > 1 || subRecord > 0 || ignoreLine > 0 || nextLine > 0) {
         useMultiLineMarkers = true;
     }
 
@@ -101,8 +102,10 @@ const ParseOneRecord = (recordTree: ParseTreeElement[], currentLineIndex: number
         result.data = {...result.data, ...lineContent.data};
         result.dataMarkers = union(result.dataMarkers, lineContent.dataMarkers);
         result.errors = union(result.errors, lineContent.errors);
-        result.linesParsed += 1;
-        currentLineIndex += 1;
+        if (currentTree[0].action !== "NextLine") {
+            result.linesParsed += 1;
+            currentLineIndex += 1;
+        }
     }
     return result;
     
@@ -129,11 +132,15 @@ const FindTreePartTillNextLine = (tree: ParseTreeElement[], index: number):  Par
             endIndex = i + 1;
             break;
         }
+        if (i === index && tree[i].action === "NextLine") {
+            endIndex = i + 1;
+            break;
+        }
         if (tree[i].action === "Column" && (<Column>tree[i]).end.content === "EOL") {
             endIndex = i + 1;
             break;
         }
-        if (tree[i].action === "IgnoreLine" || tree[i].action === "SubRecord" || tree[i].action === "Record") {
+        if (tree[i].action === "IgnoreLine" || tree[i].action === "NextLine" || tree[i].action === "SubRecord" || tree[i].action === "Record") {
             endIndex = i;
             break;
         }

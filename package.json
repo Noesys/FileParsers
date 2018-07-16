@@ -34,6 +34,6 @@
     "develop": "webpack-dev-server --config=webpack.config.js --mode=development",
     "build": "NODE_ENV=production webpack"
   },
-  "author": "",
+  "author": "Naresh Jois<naresh@noesyssoftware.com>",
   "license": "ISC"
 }

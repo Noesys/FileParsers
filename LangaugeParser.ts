@@ -5,7 +5,7 @@ import Parser from "./output/InfoveaveFileParserParser.js";
 import Visitor from "./output/InfoveaveFileParserVisitor";
 import ErrorListner from "./output/InfoveaveFileParserErrorListener";
 import validateAndTransformTree from "./treeValidation";
-import { RecordElement, SubRecordElement, SkipLine, Column, NextRecordElement, NextSubRecordElement, IgnoreLine } from "./interfaces";
+import { RecordElement, SubRecordElement, SkipLine, Column, NextRecordElement, NextSubRecordElement, IgnoreLine, NextLine } from "./interfaces";
 export const ParseCode = function (input: string) {
     var chars = new antlr4.InputStream(input);
     var lexer = new Lexer.InfoveaveFileParserLexer(chars);
@@ -109,6 +109,13 @@ export const ParseCode = function (input: string) {
             action: "IgnoreLine"
         };
     }
+
+    Visitor.InfoveaveFileParserVisitor.prototype.visitNextline = function(ctx): NextLine {
+        return {
+            line: ctx.getRuleContext().start.line,
+            action: "NextLine"
+        };
+    };   
 
     Visitor.InfoveaveFileParserVisitor.prototype.visitNextrecord = (ctx) : NextRecordElement =>  {
         let result : NextRecordElement = {
