@@ -7,55 +7,59 @@ var InfoveaveFileParserVisitor = require('./InfoveaveFileParserVisitor').Infovea
 var grammarFileName = "InfoveaveFileParser.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0016T\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003\u0016Z\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
-    "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0003\u0002\u0003\u0002\u0006\u0002\u0017",
-    "\n\u0002\r\u0002\u000e\u0002\u0018\u0003\u0002\u0003\u0002\u0003\u0003",
-    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0005\u0003%\n\u0003\u0003\u0003\u0003\u0003\u0003\u0004",
-    "\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004",
-    "\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0006\u0003\u0006",
-    "\u0003\u0006\u0003\u0006\u0003\u0006\u0005\u00069\n\u0006\u0003\u0007",
-    "\u0003\u0007\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003\t",
-    "\u0003\t\u0003\t\u0003\t\u0003\t\u0006\tG\n\t\r\t\u000e\tH\u0003\n\u0003",
-    "\n\u0003\n\u0003\n\u0003\n\u0006\nP\n\n\r\n\u000e\nQ\u0003\n\u0002\u0002",
-    "\u000b\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012\u0002\u0006\u0003\u0002",
-    "\u0010\u0011\u0004\u0002\u000b\u000b\u000f\u000f\u0006\u0002\b\b\u000e",
-    "\u000e\u0012\u0012\u0014\u0014\u0005\u0002\b\b\u0012\u0012\u0014\u0014",
-    "\u0002V\u0002\u0016\u0003\u0002\u0002\u0002\u0004$\u0003\u0002\u0002",
-    "\u0002\u0006(\u0003\u0002\u0002\u0002\b/\u0003\u0002\u0002\u0002\n3",
-    "\u0003\u0002\u0002\u0002\f:\u0003\u0002\u0002\u0002\u000e>\u0003\u0002",
-    "\u0002\u0002\u0010A\u0003\u0002\u0002\u0002\u0012J\u0003\u0002\u0002",
-    "\u0002\u0014\u0017\u0005\u0004\u0003\u0002\u0015\u0017\u0007\u0016\u0002",
-    "\u0002\u0016\u0014\u0003\u0002\u0002\u0002\u0016\u0015\u0003\u0002\u0002",
-    "\u0002\u0017\u0018\u0003\u0002\u0002\u0002\u0018\u0016\u0003\u0002\u0002",
-    "\u0002\u0018\u0019\u0003\u0002\u0002\u0002\u0019\u001a\u0003\u0002\u0002",
-    "\u0002\u001a\u001b\u0007\u0002\u0002\u0003\u001b\u0003\u0003\u0002\u0002",
-    "\u0002\u001c%\u0005\b\u0005\u0002\u001d%\u0005\f\u0007\u0002\u001e%",
-    "\u0005\n\u0006\u0002\u001f%\u0007\u0013\u0002\u0002 %\u0005\u000e\b",
-    "\u0002!%\u0005\u0010\t\u0002\"%\u0005\u0012\n\u0002#%\u0005\u0006\u0004",
-    "\u0002$\u001c\u0003\u0002\u0002\u0002$\u001d\u0003\u0002\u0002\u0002",
-    "$\u001e\u0003\u0002\u0002\u0002$\u001f\u0003\u0002\u0002\u0002$ \u0003",
-    "\u0002\u0002\u0002$!\u0003\u0002\u0002\u0002$\"\u0003\u0002\u0002\u0002",
-    "$#\u0003\u0002\u0002\u0002%&\u0003\u0002\u0002\u0002&\'\u0007\u0016",
-    "\u0002\u0002\'\u0005\u0003\u0002\u0002\u0002()\u0007\u0004\u0002\u0002",
-    ")*\u0007\t\u0002\u0002*+\u0007\n\u0002\u0002+,\u0007\u000f\u0002\u0002",
-    ",-\u0007\u000e\u0002\u0002-.\u0007\u000f\u0002\u0002.\u0007\u0003\u0002",
-    "\u0002\u0002/0\u0007\u0003\u0002\u000201\u0007\u0014\u0002\u000212\t",
-    "\u0002\u0002\u00022\t\u0003\u0002\u0002\u000234\u0007\u0005\u0002\u0002",
-    "45\u0007\u0014\u0002\u000256\u0007\u000f\u0002\u000268\t\u0003\u0002",
-    "\u000279\u0007\u0006\u0002\u000287\u0003\u0002\u0002\u000289\u0003\u0002",
-    "\u0002\u00029\u000b\u0003\u0002\u0002\u0002:;\u0007\u0007\u0002\u0002",
-    ";<\u0007\u0014\u0002\u0002<=\t\u0002\u0002\u0002=\r\u0003\u0002\u0002",
-    "\u0002>?\u0007\u0006\u0002\u0002?@\u0007\t\u0002\u0002@\u000f\u0003",
-    "\u0002\u0002\u0002AB\u0007\f\u0002\u0002BC\u0007\u0003\u0002\u0002C",
-    "D\u0007\u0014\u0002\u0002DF\u0007\r\u0002\u0002EG\t\u0004\u0002\u0002",
-    "FE\u0003\u0002\u0002\u0002GH\u0003\u0002\u0002\u0002HF\u0003\u0002\u0002",
-    "\u0002HI\u0003\u0002\u0002\u0002I\u0011\u0003\u0002\u0002\u0002JK\u0007",
-    "\f\u0002\u0002KL\u0007\u0007\u0002\u0002LM\u0007\u0014\u0002\u0002M",
-    "O\u0007\r\u0002\u0002NP\t\u0005\u0002\u0002ON\u0003\u0002\u0002\u0002",
-    "PQ\u0003\u0002\u0002\u0002QO\u0003\u0002\u0002\u0002QR\u0003\u0002\u0002",
-    "\u0002R\u0013\u0003\u0002\u0002\u0002\b\u0016\u0018$8HQ"].join("");
+    "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0003\u0002\u0003",
+    "\u0002\u0006\u0002\u0019\n\u0002\r\u0002\u000e\u0002\u001a\u0003\u0002",
+    "\u0003\u0002\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003(\n\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004",
+    "\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0005\u0003\u0005\u0003\u0005",
+    "\u0003\u0005\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006",
+    "\u0005\u0006<\n\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007",
+    "\u0003\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003\t\u0003\n\u0003\n\u0003",
+    "\n\u0003\n\u0003\n\u0006\nM\n\n\r\n\u000e\nN\u0003\u000b\u0003\u000b",
+    "\u0003\u000b\u0003\u000b\u0003\u000b\u0006\u000bV\n\u000b\r\u000b\u000e",
+    "\u000bW\u0003\u000b\u0002\u0002\f\u0002\u0004\u0006\b\n\f\u000e\u0010",
+    "\u0012\u0014\u0002\u0006\u0003\u0002\u0010\u0011\u0004\u0002\u000b\u000b",
+    "\u000f\u000f\u0006\u0002\b\b\u000e\u000e\u0012\u0012\u0014\u0014\u0005",
+    "\u0002\b\b\u0012\u0012\u0014\u0014\u0002\\\u0002\u0018\u0003\u0002\u0002",
+    "\u0002\u0004\'\u0003\u0002\u0002\u0002\u0006+\u0003\u0002\u0002\u0002",
+    "\b2\u0003\u0002\u0002\u0002\n6\u0003\u0002\u0002\u0002\f=\u0003\u0002",
+    "\u0002\u0002\u000eA\u0003\u0002\u0002\u0002\u0010D\u0003\u0002\u0002",
+    "\u0002\u0012G\u0003\u0002\u0002\u0002\u0014P\u0003\u0002\u0002\u0002",
+    "\u0016\u0019\u0005\u0004\u0003\u0002\u0017\u0019\u0007\u0016\u0002\u0002",
+    "\u0018\u0016\u0003\u0002\u0002\u0002\u0018\u0017\u0003\u0002\u0002\u0002",
+    "\u0019\u001a\u0003\u0002\u0002\u0002\u001a\u0018\u0003\u0002\u0002\u0002",
+    "\u001a\u001b\u0003\u0002\u0002\u0002\u001b\u001c\u0003\u0002\u0002\u0002",
+    "\u001c\u001d\u0007\u0002\u0002\u0003\u001d\u0003\u0003\u0002\u0002\u0002",
+    "\u001e(\u0005\b\u0005\u0002\u001f(\u0005\f\u0007\u0002 (\u0005\n\u0006",
+    "\u0002!(\u0007\u0013\u0002\u0002\"(\u0005\u000e\b\u0002#(\u0005\u0012",
+    "\n\u0002$(\u0005\u0014\u000b\u0002%(\u0005\u0010\t\u0002&(\u0005\u0006",
+    "\u0004\u0002\'\u001e\u0003\u0002\u0002\u0002\'\u001f\u0003\u0002\u0002",
+    "\u0002\' \u0003\u0002\u0002\u0002\'!\u0003\u0002\u0002\u0002\'\"\u0003",
+    "\u0002\u0002\u0002\'#\u0003\u0002\u0002\u0002\'$\u0003\u0002\u0002\u0002",
+    "\'%\u0003\u0002\u0002\u0002\'&\u0003\u0002\u0002\u0002()\u0003\u0002",
+    "\u0002\u0002)*\u0007\u0016\u0002\u0002*\u0005\u0003\u0002\u0002\u0002",
+    "+,\u0007\u0004\u0002\u0002,-\u0007\t\u0002\u0002-.\u0007\n\u0002\u0002",
+    "./\u0007\u000f\u0002\u0002/0\u0007\u000e\u0002\u000201\u0007\u000f\u0002",
+    "\u00021\u0007\u0003\u0002\u0002\u000223\u0007\u0003\u0002\u000234\u0007",
+    "\u0014\u0002\u000245\t\u0002\u0002\u00025\t\u0003\u0002\u0002\u0002",
+    "67\u0007\u0005\u0002\u000278\u0007\u0014\u0002\u000289\u0007\u000f\u0002",
+    "\u00029;\t\u0003\u0002\u0002:<\u0007\u0006\u0002\u0002;:\u0003\u0002",
+    "\u0002\u0002;<\u0003\u0002\u0002\u0002<\u000b\u0003\u0002\u0002\u0002",
+    "=>\u0007\u0007\u0002\u0002>?\u0007\u0014\u0002\u0002?@\t\u0002\u0002",
+    "\u0002@\r\u0003\u0002\u0002\u0002AB\u0007\u0006\u0002\u0002BC\u0007",
+    "\t\u0002\u0002C\u000f\u0003\u0002\u0002\u0002DE\u0007\f\u0002\u0002",
+    "EF\u0007\t\u0002\u0002F\u0011\u0003\u0002\u0002\u0002GH\u0007\f\u0002",
+    "\u0002HI\u0007\u0003\u0002\u0002IJ\u0007\u0014\u0002\u0002JL\u0007\r",
+    "\u0002\u0002KM\t\u0004\u0002\u0002LK\u0003\u0002\u0002\u0002MN\u0003",
+    "\u0002\u0002\u0002NL\u0003\u0002\u0002\u0002NO\u0003\u0002\u0002\u0002",
+    "O\u0013\u0003\u0002\u0002\u0002PQ\u0007\f\u0002\u0002QR\u0007\u0007",
+    "\u0002\u0002RS\u0007\u0014\u0002\u0002SU\u0007\r\u0002\u0002TV\t\u0005",
+    "\u0002\u0002UT\u0003\u0002\u0002\u0002VW\u0003\u0002\u0002\u0002WU\u0003",
+    "\u0002\u0002\u0002WX\u0003\u0002\u0002\u0002X\u0015\u0003\u0002\u0002",
+    "\u0002\b\u0018\u001a\';NW"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -72,7 +76,7 @@ var symbolicNames = [ null, "RECORD", "SKIPLINE", "COLUMN", "IGNORE", "SUBRECORD
                       "COMMENT", "IDENTIFIER", "WHITESPACE", "NEWLINE" ];
 
 var ruleNames =  [ "program", "line", "skipline", "record", "column", "subrecord", 
-                   "ignoreline", "nextrecord", "nextsubrecord" ];
+                   "ignoreline", "nextline", "nextrecord", "nextsubrecord" ];
 
 function InfoveaveFileParserParser (input) {
 	antlr4.Parser.call(this, input);
@@ -121,8 +125,9 @@ InfoveaveFileParserParser.RULE_record = 3;
 InfoveaveFileParserParser.RULE_column = 4;
 InfoveaveFileParserParser.RULE_subrecord = 5;
 InfoveaveFileParserParser.RULE_ignoreline = 6;
-InfoveaveFileParserParser.RULE_nextrecord = 7;
-InfoveaveFileParserParser.RULE_nextsubrecord = 8;
+InfoveaveFileParserParser.RULE_nextline = 7;
+InfoveaveFileParserParser.RULE_nextrecord = 8;
+InfoveaveFileParserParser.RULE_nextsubrecord = 9;
 
 function ProgramContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -199,11 +204,11 @@ InfoveaveFileParserParser.prototype.program = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 20; 
+        this.state = 22; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 20;
+            this.state = 22;
             this._errHandler.sync(this);
             switch(this._input.LA(1)) {
             case InfoveaveFileParserParser.RECORD:
@@ -213,21 +218,21 @@ InfoveaveFileParserParser.prototype.program = function() {
             case InfoveaveFileParserParser.SUBRECORD:
             case InfoveaveFileParserParser.NEXT:
             case InfoveaveFileParserParser.COMMENT:
-                this.state = 18;
+                this.state = 20;
                 this.line();
                 break;
             case InfoveaveFileParserParser.NEWLINE:
-                this.state = 19;
+                this.state = 21;
                 this.match(InfoveaveFileParserParser.NEWLINE);
                 break;
             default:
                 throw new antlr4.error.NoViableAltException(this);
             }
-            this.state = 22; 
+            this.state = 24; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.RECORD) | (1 << InfoveaveFileParserParser.SKIPLINE) | (1 << InfoveaveFileParserParser.COLUMN) | (1 << InfoveaveFileParserParser.IGNORE) | (1 << InfoveaveFileParserParser.SUBRECORD) | (1 << InfoveaveFileParserParser.NEXT) | (1 << InfoveaveFileParserParser.COMMENT) | (1 << InfoveaveFileParserParser.NEWLINE))) !== 0));
-        this.state = 24;
+        this.state = 26;
         this.match(InfoveaveFileParserParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -291,6 +296,10 @@ LineContext.prototype.nextsubrecord = function() {
     return this.getTypedRuleContext(NextsubrecordContext,0);
 };
 
+LineContext.prototype.nextline = function() {
+    return this.getTypedRuleContext(NextlineContext,0);
+};
+
 LineContext.prototype.skipline = function() {
     return this.getTypedRuleContext(SkiplineContext,0);
 };
@@ -326,52 +335,57 @@ InfoveaveFileParserParser.prototype.line = function() {
     this.enterRule(localctx, 2, InfoveaveFileParserParser.RULE_line);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 34;
+        this.state = 37;
         this._errHandler.sync(this);
         var la_ = this._interp.adaptivePredict(this._input,2,this._ctx);
         switch(la_) {
         case 1:
-            this.state = 26;
+            this.state = 28;
             this.record();
             break;
 
         case 2:
-            this.state = 27;
+            this.state = 29;
             this.subrecord();
             break;
 
         case 3:
-            this.state = 28;
+            this.state = 30;
             this.column();
             break;
 
         case 4:
-            this.state = 29;
+            this.state = 31;
             this.match(InfoveaveFileParserParser.COMMENT);
             break;
 
         case 5:
-            this.state = 30;
+            this.state = 32;
             this.ignoreline();
             break;
 
         case 6:
-            this.state = 31;
+            this.state = 33;
             this.nextrecord();
             break;
 
         case 7:
-            this.state = 32;
+            this.state = 34;
             this.nextsubrecord();
             break;
 
         case 8:
-            this.state = 33;
+            this.state = 35;
+            this.nextline();
+            break;
+
+        case 9:
+            this.state = 36;
             this.skipline();
             break;
 
         }
-        this.state = 36;
+        this.state = 39;
         this.match(InfoveaveFileParserParser.NEWLINE);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -462,17 +476,17 @@ InfoveaveFileParserParser.prototype.skipline = function() {
     this.enterRule(localctx, 4, InfoveaveFileParserParser.RULE_skipline);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 38;
-        this.match(InfoveaveFileParserParser.SKIPLINE);
-        this.state = 39;
-        this.match(InfoveaveFileParserParser.LINE);
-        this.state = 40;
-        this.match(InfoveaveFileParserParser.BOF);
         this.state = 41;
-        this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
+        this.match(InfoveaveFileParserParser.SKIPLINE);
         this.state = 42;
-        this.match(InfoveaveFileParserParser.ENDOFFILE);
+        this.match(InfoveaveFileParserParser.LINE);
         this.state = 43;
+        this.match(InfoveaveFileParserParser.BOF);
+        this.state = 44;
+        this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
+        this.state = 45;
+        this.match(InfoveaveFileParserParser.ENDOFFILE);
+        this.state = 46;
         this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -552,11 +566,11 @@ InfoveaveFileParserParser.prototype.record = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 45;
+        this.state = 48;
         this.match(InfoveaveFileParserParser.RECORD);
-        this.state = 46;
+        this.state = 49;
         this.match(InfoveaveFileParserParser.IDENTIFIER);
-        this.state = 47;
+        this.state = 50;
         _la = this._input.LA(1);
         if(!(_la===InfoveaveFileParserParser.BEGIN || _la===InfoveaveFileParserParser.END)) {
         this._errHandler.recoverInline(this);
@@ -655,13 +669,13 @@ InfoveaveFileParserParser.prototype.column = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 49;
-        this.match(InfoveaveFileParserParser.COLUMN);
-        this.state = 50;
-        this.match(InfoveaveFileParserParser.IDENTIFIER);
-        this.state = 51;
-        this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
         this.state = 52;
+        this.match(InfoveaveFileParserParser.COLUMN);
+        this.state = 53;
+        this.match(InfoveaveFileParserParser.IDENTIFIER);
+        this.state = 54;
+        this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
+        this.state = 55;
         _la = this._input.LA(1);
         if(!(_la===InfoveaveFileParserParser.EOL || _la===InfoveaveFileParserParser.COLUMNIDENTIFIER)) {
         this._errHandler.recoverInline(this);
@@ -670,11 +684,11 @@ InfoveaveFileParserParser.prototype.column = function() {
         	this._errHandler.reportMatch(this);
             this.consume();
         }
-        this.state = 54;
+        this.state = 57;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         if(_la===InfoveaveFileParserParser.IGNORE) {
-            this.state = 53;
+            this.state = 56;
             this.match(InfoveaveFileParserParser.IGNORE);
         }
 
@@ -756,11 +770,11 @@ InfoveaveFileParserParser.prototype.subrecord = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 56;
+        this.state = 59;
         this.match(InfoveaveFileParserParser.SUBRECORD);
-        this.state = 57;
+        this.state = 60;
         this.match(InfoveaveFileParserParser.IDENTIFIER);
-        this.state = 58;
+        this.state = 61;
         _la = this._input.LA(1);
         if(!(_la===InfoveaveFileParserParser.BEGIN || _la===InfoveaveFileParserParser.END)) {
         this._errHandler.recoverInline(this);
@@ -838,9 +852,82 @@ InfoveaveFileParserParser.prototype.ignoreline = function() {
     this.enterRule(localctx, 12, InfoveaveFileParserParser.RULE_ignoreline);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 60;
+        this.state = 63;
         this.match(InfoveaveFileParserParser.IGNORE);
-        this.state = 61;
+        this.state = 64;
+        this.match(InfoveaveFileParserParser.LINE);
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+function NextlineContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = InfoveaveFileParserParser.RULE_nextline;
+    return this;
+}
+
+NextlineContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+NextlineContext.prototype.constructor = NextlineContext;
+
+NextlineContext.prototype.NEXT = function() {
+    return this.getToken(InfoveaveFileParserParser.NEXT, 0);
+};
+
+NextlineContext.prototype.LINE = function() {
+    return this.getToken(InfoveaveFileParserParser.LINE, 0);
+};
+
+NextlineContext.prototype.enterRule = function(listener) {
+    if(listener instanceof InfoveaveFileParserListener ) {
+        listener.enterNextline(this);
+	}
+};
+
+NextlineContext.prototype.exitRule = function(listener) {
+    if(listener instanceof InfoveaveFileParserListener ) {
+        listener.exitNextline(this);
+	}
+};
+
+NextlineContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof InfoveaveFileParserVisitor ) {
+        return visitor.visitNextline(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+
+InfoveaveFileParserParser.NextlineContext = NextlineContext;
+
+InfoveaveFileParserParser.prototype.nextline = function() {
+
+    var localctx = new NextlineContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 14, InfoveaveFileParserParser.RULE_nextline);
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 66;
+        this.match(InfoveaveFileParserParser.NEXT);
+        this.state = 67;
         this.match(InfoveaveFileParserParser.LINE);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -960,23 +1047,23 @@ InfoveaveFileParserParser.NextrecordContext = NextrecordContext;
 InfoveaveFileParserParser.prototype.nextrecord = function() {
 
     var localctx = new NextrecordContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 14, InfoveaveFileParserParser.RULE_nextrecord);
+    this.enterRule(localctx, 16, InfoveaveFileParserParser.RULE_nextrecord);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 63;
+        this.state = 69;
         this.match(InfoveaveFileParserParser.NEXT);
-        this.state = 64;
+        this.state = 70;
         this.match(InfoveaveFileParserParser.RECORD);
-        this.state = 65;
+        this.state = 71;
         this.match(InfoveaveFileParserParser.IDENTIFIER);
-        this.state = 66;
+        this.state = 72;
         this.match(InfoveaveFileParserParser.TILL);
-        this.state = 68; 
+        this.state = 74; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 67;
+            this.state = 73;
             _la = this._input.LA(1);
             if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.ENDOFFILE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0))) {
             this._errHandler.recoverInline(this);
@@ -985,7 +1072,7 @@ InfoveaveFileParserParser.prototype.nextrecord = function() {
             	this._errHandler.reportMatch(this);
                 this.consume();
             }
-            this.state = 70; 
+            this.state = 76; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.ENDOFFILE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0));
@@ -1095,23 +1182,23 @@ InfoveaveFileParserParser.NextsubrecordContext = NextsubrecordContext;
 InfoveaveFileParserParser.prototype.nextsubrecord = function() {
 
     var localctx = new NextsubrecordContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 16, InfoveaveFileParserParser.RULE_nextsubrecord);
+    this.enterRule(localctx, 18, InfoveaveFileParserParser.RULE_nextsubrecord);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 72;
+        this.state = 78;
         this.match(InfoveaveFileParserParser.NEXT);
-        this.state = 73;
+        this.state = 79;
         this.match(InfoveaveFileParserParser.SUBRECORD);
-        this.state = 74;
+        this.state = 80;
         this.match(InfoveaveFileParserParser.IDENTIFIER);
-        this.state = 75;
+        this.state = 81;
         this.match(InfoveaveFileParserParser.TILL);
-        this.state = 77; 
+        this.state = 83; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 76;
+            this.state = 82;
             _la = this._input.LA(1);
             if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0))) {
             this._errHandler.recoverInline(this);
@@ -1120,7 +1207,7 @@ InfoveaveFileParserParser.prototype.nextsubrecord = function() {
             	this._errHandler.reportMatch(this);
                 this.consume();
             }
-            this.state = 79; 
+            this.state = 85; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0));

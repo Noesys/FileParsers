@@ -54,6 +54,12 @@ InfoveaveFileParserVisitor.prototype.visitIgnoreline = function(ctx) {
 };
 
 
+// Visit a parse tree produced by InfoveaveFileParserParser#nextline.
+InfoveaveFileParserVisitor.prototype.visitNextline = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by InfoveaveFileParserParser#nextrecord.
 InfoveaveFileParserVisitor.prototype.visitNextrecord = function(ctx) {
   return this.visitChildren(ctx);

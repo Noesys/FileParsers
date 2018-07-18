@@ -74,6 +74,15 @@ InfoveaveFileParserListener.prototype.exitIgnoreline = function(ctx) {
 };
 
 
+// Enter a parse tree produced by InfoveaveFileParserParser#nextline.
+InfoveaveFileParserListener.prototype.enterNextline = function(ctx) {
+};
+
+// Exit a parse tree produced by InfoveaveFileParserParser#nextline.
+InfoveaveFileParserListener.prototype.exitNextline = function(ctx) {
+};
+
+
 // Enter a parse tree produced by InfoveaveFileParserParser#nextrecord.
 InfoveaveFileParserListener.prototype.enterNextrecord = function(ctx) {
 };
