@@ -6,7 +6,7 @@ grammar InfoveaveFileParser;
 program       : (line| NEWLINE)+ EOF ;
 line          : (record | subrecord | column | COMMENT | ignoreline | nextrecord | nextsubrecord | nextline | skipline) NEWLINE;
 skipline      : SKIPLINE LINE BOF COLUMNIDENTIFIER ENDOFFILE COLUMNIDENTIFIER;
-record        : RECORD IDENTIFIER (BEGIN|END);
+record        : RECORD IDENTIFIER (BEGIN|END) (COLUMNIDENTIFIER)?;
 column        : COLUMN IDENTIFIER COLUMNIDENTIFIER (COLUMNIDENTIFIER|EOL) (IGNORE)?;
 subrecord     : SUBRECORD IDENTIFIER (BEGIN|END) ;
 ignoreline    : IGNORE LINE;
@@ -48,6 +48,7 @@ fragment LOWERCASE  : [a-z] ;
 fragment UPPERCASE  : [A-Z] ;
 fragment NUMBER     : [0-9] ;
 fragment SPECIALCHAR: [[\].()<>/\\:#|!@$%^&*_+'",?~`-] ;
+fragment UNDERSCORE : [_] ;
 
 RECORD              : R E C O R D ;
 SKIPLINE            : S K I P ;
@@ -63,12 +64,11 @@ TILL                : T I L L ;
 ENDOFFILE           : E O F;
 COLUMNIDENTIFIER    : ((NUMBER)+|(NUMBER|SPECIALCHAR)+) ;
 
-
 BEGIN               : B E G I N ;
 END                 : E N D ;
 SPECIALCHARWORD     : SPECIALCHAR;
 COMMENT        : '#' ~[\r\n]* -> skip;
 
-IDENTIFIER          : (LOWERCASE | UPPERCASE | NUMBER)+ ;
+IDENTIFIER          : (LOWERCASE | UPPERCASE | NUMBER |  UNDERSCORE)+ ;
 WHITESPACE          : [ \t]+ -> skip ;
 NEWLINE             : ('\r'? '\n' | '\r')+ ;

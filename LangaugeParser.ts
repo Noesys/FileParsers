@@ -24,6 +24,10 @@ export const ParseCode = function (input: string) {
     };
 
     Visitor.InfoveaveFileParserVisitor.prototype.visitRecord =  (ctx): RecordElement => {
+        let lineCount = 0;
+        if (ctx.children[3] != null && !isNaN(parseInt(ctx.children[3].getText()))) {
+            lineCount = parseInt(ctx.children[3].getText());
+        }
         return {
             line: ctx.getRuleContext().start.line,
             action: "Record",
@@ -36,7 +40,8 @@ export const ParseCode = function (input: string) {
                 content: ctx.children[2].getText(),
                 begin: ctx.getRuleContext().children[2].symbol.column,
                 end: ctx.getRuleContext().children[2].symbol.column + ctx.children[2].getText().length
-            }
+            },
+            lineCount: lineCount,
         };
     }
 
@@ -163,8 +168,8 @@ export const ParseCode = function (input: string) {
     var result;
     try {
         result = visitor.visitProgram(tree);
-
     } catch (e) {
+        console.log(e);
         // errorListener.errors.push({ line: 1, column: 1, message: "Unable to Parse Expression" });
     };
     let c = {

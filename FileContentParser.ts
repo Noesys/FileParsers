@@ -204,3 +204,13 @@ const FindAllIndexesOfChar = (lineText: string, char: string): number[] => {
     }
     return indices;
 }
+
+export default function (callback, text, configuration) {
+    try {
+        const parseTree = JSON.parse(configuration.parseTree);
+        const result = ParseTextUsingTree(text, parseTree);
+        callback(null, result);
+    } catch (error) {
+        callback(error, null);
+    }
+}

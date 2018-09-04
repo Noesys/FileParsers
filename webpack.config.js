@@ -27,8 +27,7 @@ var productionPlugins = [
 var plugins = (isProduction) ? basePlugins.concat(productionPlugins) : basePlugins.concat(developmentPlugins);
 
 let entry = (isProduction) ?  { 
-    "InfoveaveFileParser" : "./index.ts",
-    "CustomFileParser": "./CustomFileParser.ts"
+    "InfoveaveFileParser" : "./index.ts"
 } : {
     "parser" : "./index.ts",
     "ui": "./ui.tsx",  

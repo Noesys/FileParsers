@@ -38,6 +38,7 @@ export interface RecordElement {
         begin: string;
         end: string;
     };
+    lineCount?: number;
 }
 
 export interface SubRecordElement {

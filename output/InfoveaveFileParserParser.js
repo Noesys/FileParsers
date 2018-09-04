@@ -7,7 +7,7 @@ var InfoveaveFileParserVisitor = require('./InfoveaveFileParserVisitor').Infovea
 var grammarFileName = "InfoveaveFileParser.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0016Z\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003\u0016\\\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
     "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0003\u0002\u0003",
     "\u0002\u0006\u0002\u0019\n\u0002\r\u0002\u000e\u0002\u001a\u0003\u0002",
@@ -15,51 +15,52 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003(\n\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004",
     "\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0005\u0003\u0005\u0003\u0005",
-    "\u0003\u0005\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006",
-    "\u0005\u0006<\n\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007",
-    "\u0003\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003\t\u0003\n\u0003\n\u0003",
-    "\n\u0003\n\u0003\n\u0006\nM\n\n\r\n\u000e\nN\u0003\u000b\u0003\u000b",
-    "\u0003\u000b\u0003\u000b\u0003\u000b\u0006\u000bV\n\u000b\r\u000b\u000e",
-    "\u000bW\u0003\u000b\u0002\u0002\f\u0002\u0004\u0006\b\n\f\u000e\u0010",
-    "\u0012\u0014\u0002\u0006\u0003\u0002\u0010\u0011\u0004\u0002\u000b\u000b",
-    "\u000f\u000f\u0006\u0002\b\b\u000e\u000e\u0012\u0012\u0014\u0014\u0005",
-    "\u0002\b\b\u0012\u0012\u0014\u0014\u0002\\\u0002\u0018\u0003\u0002\u0002",
-    "\u0002\u0004\'\u0003\u0002\u0002\u0002\u0006+\u0003\u0002\u0002\u0002",
-    "\b2\u0003\u0002\u0002\u0002\n6\u0003\u0002\u0002\u0002\f=\u0003\u0002",
-    "\u0002\u0002\u000eA\u0003\u0002\u0002\u0002\u0010D\u0003\u0002\u0002",
-    "\u0002\u0012G\u0003\u0002\u0002\u0002\u0014P\u0003\u0002\u0002\u0002",
-    "\u0016\u0019\u0005\u0004\u0003\u0002\u0017\u0019\u0007\u0016\u0002\u0002",
-    "\u0018\u0016\u0003\u0002\u0002\u0002\u0018\u0017\u0003\u0002\u0002\u0002",
-    "\u0019\u001a\u0003\u0002\u0002\u0002\u001a\u0018\u0003\u0002\u0002\u0002",
-    "\u001a\u001b\u0003\u0002\u0002\u0002\u001b\u001c\u0003\u0002\u0002\u0002",
-    "\u001c\u001d\u0007\u0002\u0002\u0003\u001d\u0003\u0003\u0002\u0002\u0002",
-    "\u001e(\u0005\b\u0005\u0002\u001f(\u0005\f\u0007\u0002 (\u0005\n\u0006",
-    "\u0002!(\u0007\u0013\u0002\u0002\"(\u0005\u000e\b\u0002#(\u0005\u0012",
-    "\n\u0002$(\u0005\u0014\u000b\u0002%(\u0005\u0010\t\u0002&(\u0005\u0006",
-    "\u0004\u0002\'\u001e\u0003\u0002\u0002\u0002\'\u001f\u0003\u0002\u0002",
-    "\u0002\' \u0003\u0002\u0002\u0002\'!\u0003\u0002\u0002\u0002\'\"\u0003",
-    "\u0002\u0002\u0002\'#\u0003\u0002\u0002\u0002\'$\u0003\u0002\u0002\u0002",
-    "\'%\u0003\u0002\u0002\u0002\'&\u0003\u0002\u0002\u0002()\u0003\u0002",
-    "\u0002\u0002)*\u0007\u0016\u0002\u0002*\u0005\u0003\u0002\u0002\u0002",
-    "+,\u0007\u0004\u0002\u0002,-\u0007\t\u0002\u0002-.\u0007\n\u0002\u0002",
-    "./\u0007\u000f\u0002\u0002/0\u0007\u000e\u0002\u000201\u0007\u000f\u0002",
-    "\u00021\u0007\u0003\u0002\u0002\u000223\u0007\u0003\u0002\u000234\u0007",
-    "\u0014\u0002\u000245\t\u0002\u0002\u00025\t\u0003\u0002\u0002\u0002",
-    "67\u0007\u0005\u0002\u000278\u0007\u0014\u0002\u000289\u0007\u000f\u0002",
-    "\u00029;\t\u0003\u0002\u0002:<\u0007\u0006\u0002\u0002;:\u0003\u0002",
-    "\u0002\u0002;<\u0003\u0002\u0002\u0002<\u000b\u0003\u0002\u0002\u0002",
-    "=>\u0007\u0007\u0002\u0002>?\u0007\u0014\u0002\u0002?@\t\u0002\u0002",
-    "\u0002@\r\u0003\u0002\u0002\u0002AB\u0007\u0006\u0002\u0002BC\u0007",
-    "\t\u0002\u0002C\u000f\u0003\u0002\u0002\u0002DE\u0007\f\u0002\u0002",
-    "EF\u0007\t\u0002\u0002F\u0011\u0003\u0002\u0002\u0002GH\u0007\f\u0002",
-    "\u0002HI\u0007\u0003\u0002\u0002IJ\u0007\u0014\u0002\u0002JL\u0007\r",
-    "\u0002\u0002KM\t\u0004\u0002\u0002LK\u0003\u0002\u0002\u0002MN\u0003",
-    "\u0002\u0002\u0002NL\u0003\u0002\u0002\u0002NO\u0003\u0002\u0002\u0002",
-    "O\u0013\u0003\u0002\u0002\u0002PQ\u0007\f\u0002\u0002QR\u0007\u0007",
-    "\u0002\u0002RS\u0007\u0014\u0002\u0002SU\u0007\r\u0002\u0002TV\t\u0005",
-    "\u0002\u0002UT\u0003\u0002\u0002\u0002VW\u0003\u0002\u0002\u0002WU\u0003",
-    "\u0002\u0002\u0002WX\u0003\u0002\u0002\u0002X\u0015\u0003\u0002\u0002",
-    "\u0002\b\u0018\u001a\';NW"].join("");
+    "\u0003\u0005\u0005\u00057\n\u0005\u0003\u0006\u0003\u0006\u0003\u0006",
+    "\u0003\u0006\u0003\u0006\u0005\u0006>\n\u0006\u0003\u0007\u0003\u0007",
+    "\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003",
+    "\t\u0003\n\u0003\n\u0003\n\u0003\n\u0003\n\u0006\nO\n\n\r\n\u000e\n",
+    "P\u0003\u000b\u0003\u000b\u0003\u000b\u0003\u000b\u0003\u000b\u0006",
+    "\u000bX\n\u000b\r\u000b\u000e\u000bY\u0003\u000b\u0002\u0002\f\u0002",
+    "\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0002\u0006\u0003\u0002\u0010",
+    "\u0011\u0004\u0002\u000b\u000b\u000f\u000f\u0006\u0002\b\b\u000e\u000e",
+    "\u0012\u0012\u0014\u0014\u0005\u0002\b\b\u0012\u0012\u0014\u0014\u0002",
+    "_\u0002\u0018\u0003\u0002\u0002\u0002\u0004\'\u0003\u0002\u0002\u0002",
+    "\u0006+\u0003\u0002\u0002\u0002\b2\u0003\u0002\u0002\u0002\n8\u0003",
+    "\u0002\u0002\u0002\f?\u0003\u0002\u0002\u0002\u000eC\u0003\u0002\u0002",
+    "\u0002\u0010F\u0003\u0002\u0002\u0002\u0012I\u0003\u0002\u0002\u0002",
+    "\u0014R\u0003\u0002\u0002\u0002\u0016\u0019\u0005\u0004\u0003\u0002",
+    "\u0017\u0019\u0007\u0016\u0002\u0002\u0018\u0016\u0003\u0002\u0002\u0002",
+    "\u0018\u0017\u0003\u0002\u0002\u0002\u0019\u001a\u0003\u0002\u0002\u0002",
+    "\u001a\u0018\u0003\u0002\u0002\u0002\u001a\u001b\u0003\u0002\u0002\u0002",
+    "\u001b\u001c\u0003\u0002\u0002\u0002\u001c\u001d\u0007\u0002\u0002\u0003",
+    "\u001d\u0003\u0003\u0002\u0002\u0002\u001e(\u0005\b\u0005\u0002\u001f",
+    "(\u0005\f\u0007\u0002 (\u0005\n\u0006\u0002!(\u0007\u0013\u0002\u0002",
+    "\"(\u0005\u000e\b\u0002#(\u0005\u0012\n\u0002$(\u0005\u0014\u000b\u0002",
+    "%(\u0005\u0010\t\u0002&(\u0005\u0006\u0004\u0002\'\u001e\u0003\u0002",
+    "\u0002\u0002\'\u001f\u0003\u0002\u0002\u0002\' \u0003\u0002\u0002\u0002",
+    "\'!\u0003\u0002\u0002\u0002\'\"\u0003\u0002\u0002\u0002\'#\u0003\u0002",
+    "\u0002\u0002\'$\u0003\u0002\u0002\u0002\'%\u0003\u0002\u0002\u0002\'",
+    "&\u0003\u0002\u0002\u0002()\u0003\u0002\u0002\u0002)*\u0007\u0016\u0002",
+    "\u0002*\u0005\u0003\u0002\u0002\u0002+,\u0007\u0004\u0002\u0002,-\u0007",
+    "\t\u0002\u0002-.\u0007\n\u0002\u0002./\u0007\u000f\u0002\u0002/0\u0007",
+    "\u000e\u0002\u000201\u0007\u000f\u0002\u00021\u0007\u0003\u0002\u0002",
+    "\u000223\u0007\u0003\u0002\u000234\u0007\u0014\u0002\u000246\t\u0002",
+    "\u0002\u000257\u0007\u000f\u0002\u000265\u0003\u0002\u0002\u000267\u0003",
+    "\u0002\u0002\u00027\t\u0003\u0002\u0002\u000289\u0007\u0005\u0002\u0002",
+    "9:\u0007\u0014\u0002\u0002:;\u0007\u000f\u0002\u0002;=\t\u0003\u0002",
+    "\u0002<>\u0007\u0006\u0002\u0002=<\u0003\u0002\u0002\u0002=>\u0003\u0002",
+    "\u0002\u0002>\u000b\u0003\u0002\u0002\u0002?@\u0007\u0007\u0002\u0002",
+    "@A\u0007\u0014\u0002\u0002AB\t\u0002\u0002\u0002B\r\u0003\u0002\u0002",
+    "\u0002CD\u0007\u0006\u0002\u0002DE\u0007\t\u0002\u0002E\u000f\u0003",
+    "\u0002\u0002\u0002FG\u0007\f\u0002\u0002GH\u0007\t\u0002\u0002H\u0011",
+    "\u0003\u0002\u0002\u0002IJ\u0007\f\u0002\u0002JK\u0007\u0003\u0002\u0002",
+    "KL\u0007\u0014\u0002\u0002LN\u0007\r\u0002\u0002MO\t\u0004\u0002\u0002",
+    "NM\u0003\u0002\u0002\u0002OP\u0003\u0002\u0002\u0002PN\u0003\u0002\u0002",
+    "\u0002PQ\u0003\u0002\u0002\u0002Q\u0013\u0003\u0002\u0002\u0002RS\u0007",
+    "\f\u0002\u0002ST\u0007\u0007\u0002\u0002TU\u0007\u0014\u0002\u0002U",
+    "W\u0007\r\u0002\u0002VX\t\u0005\u0002\u0002WV\u0003\u0002\u0002\u0002",
+    "XY\u0003\u0002\u0002\u0002YW\u0003\u0002\u0002\u0002YZ\u0003\u0002\u0002",
+    "\u0002Z\u0015\u0003\u0002\u0002\u0002\t\u0018\u001a\'6=PY"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -534,6 +535,10 @@ RecordContext.prototype.END = function() {
     return this.getToken(InfoveaveFileParserParser.END, 0);
 };
 
+RecordContext.prototype.COLUMNIDENTIFIER = function() {
+    return this.getToken(InfoveaveFileParserParser.COLUMNIDENTIFIER, 0);
+};
+
 RecordContext.prototype.enterRule = function(listener) {
     if(listener instanceof InfoveaveFileParserListener ) {
         listener.enterRecord(this);
@@ -579,6 +584,14 @@ InfoveaveFileParserParser.prototype.record = function() {
         	this._errHandler.reportMatch(this);
             this.consume();
         }
+        this.state = 52;
+        this._errHandler.sync(this);
+        _la = this._input.LA(1);
+        if(_la===InfoveaveFileParserParser.COLUMNIDENTIFIER) {
+            this.state = 51;
+            this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
+        }
+
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;
@@ -669,13 +682,13 @@ InfoveaveFileParserParser.prototype.column = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 52;
-        this.match(InfoveaveFileParserParser.COLUMN);
-        this.state = 53;
-        this.match(InfoveaveFileParserParser.IDENTIFIER);
         this.state = 54;
-        this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
+        this.match(InfoveaveFileParserParser.COLUMN);
         this.state = 55;
+        this.match(InfoveaveFileParserParser.IDENTIFIER);
+        this.state = 56;
+        this.match(InfoveaveFileParserParser.COLUMNIDENTIFIER);
+        this.state = 57;
         _la = this._input.LA(1);
         if(!(_la===InfoveaveFileParserParser.EOL || _la===InfoveaveFileParserParser.COLUMNIDENTIFIER)) {
         this._errHandler.recoverInline(this);
@@ -684,11 +697,11 @@ InfoveaveFileParserParser.prototype.column = function() {
         	this._errHandler.reportMatch(this);
             this.consume();
         }
-        this.state = 57;
+        this.state = 59;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         if(_la===InfoveaveFileParserParser.IGNORE) {
-            this.state = 56;
+            this.state = 58;
             this.match(InfoveaveFileParserParser.IGNORE);
         }
 
@@ -770,11 +783,11 @@ InfoveaveFileParserParser.prototype.subrecord = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 59;
-        this.match(InfoveaveFileParserParser.SUBRECORD);
-        this.state = 60;
-        this.match(InfoveaveFileParserParser.IDENTIFIER);
         this.state = 61;
+        this.match(InfoveaveFileParserParser.SUBRECORD);
+        this.state = 62;
+        this.match(InfoveaveFileParserParser.IDENTIFIER);
+        this.state = 63;
         _la = this._input.LA(1);
         if(!(_la===InfoveaveFileParserParser.BEGIN || _la===InfoveaveFileParserParser.END)) {
         this._errHandler.recoverInline(this);
@@ -852,9 +865,9 @@ InfoveaveFileParserParser.prototype.ignoreline = function() {
     this.enterRule(localctx, 12, InfoveaveFileParserParser.RULE_ignoreline);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 63;
+        this.state = 65;
         this.match(InfoveaveFileParserParser.IGNORE);
-        this.state = 64;
+        this.state = 66;
         this.match(InfoveaveFileParserParser.LINE);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -925,9 +938,9 @@ InfoveaveFileParserParser.prototype.nextline = function() {
     this.enterRule(localctx, 14, InfoveaveFileParserParser.RULE_nextline);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 66;
+        this.state = 68;
         this.match(InfoveaveFileParserParser.NEXT);
-        this.state = 67;
+        this.state = 69;
         this.match(InfoveaveFileParserParser.LINE);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1051,19 +1064,19 @@ InfoveaveFileParserParser.prototype.nextrecord = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 69;
-        this.match(InfoveaveFileParserParser.NEXT);
-        this.state = 70;
-        this.match(InfoveaveFileParserParser.RECORD);
         this.state = 71;
-        this.match(InfoveaveFileParserParser.IDENTIFIER);
+        this.match(InfoveaveFileParserParser.NEXT);
         this.state = 72;
+        this.match(InfoveaveFileParserParser.RECORD);
+        this.state = 73;
+        this.match(InfoveaveFileParserParser.IDENTIFIER);
+        this.state = 74;
         this.match(InfoveaveFileParserParser.TILL);
-        this.state = 74; 
+        this.state = 76; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 73;
+            this.state = 75;
             _la = this._input.LA(1);
             if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.ENDOFFILE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0))) {
             this._errHandler.recoverInline(this);
@@ -1072,7 +1085,7 @@ InfoveaveFileParserParser.prototype.nextrecord = function() {
             	this._errHandler.reportMatch(this);
                 this.consume();
             }
-            this.state = 76; 
+            this.state = 78; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.ENDOFFILE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0));
@@ -1186,19 +1199,19 @@ InfoveaveFileParserParser.prototype.nextsubrecord = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 78;
-        this.match(InfoveaveFileParserParser.NEXT);
-        this.state = 79;
-        this.match(InfoveaveFileParserParser.SUBRECORD);
         this.state = 80;
-        this.match(InfoveaveFileParserParser.IDENTIFIER);
+        this.match(InfoveaveFileParserParser.NEXT);
         this.state = 81;
+        this.match(InfoveaveFileParserParser.SUBRECORD);
+        this.state = 82;
+        this.match(InfoveaveFileParserParser.IDENTIFIER);
+        this.state = 83;
         this.match(InfoveaveFileParserParser.TILL);
-        this.state = 83; 
+        this.state = 85; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 82;
+            this.state = 84;
             _la = this._input.LA(1);
             if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0))) {
             this._errHandler.recoverInline(this);
@@ -1207,7 +1220,7 @@ InfoveaveFileParserParser.prototype.nextsubrecord = function() {
             	this._errHandler.reportMatch(this);
                 this.consume();
             }
-            this.state = 85; 
+            this.state = 87; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << InfoveaveFileParserParser.EMPTYLINE) | (1 << InfoveaveFileParserParser.SPECIALCHARWORD) | (1 << InfoveaveFileParserParser.IDENTIFIER))) !== 0));
