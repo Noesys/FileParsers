@@ -1,4 +1,4 @@
-// Generated from /Users/nareshjois/Projects/Infoveave/FileParser/InfoveaveFileParser.g4 by ANTLR 4.7.1
+// Generated from .\InfoveaveFileParser.g4 by ANTLR 4.7.1
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 var InfoveaveFileParserListener = require('./InfoveaveFileParserListener').InfoveaveFileParserListener;
@@ -7,7 +7,7 @@ var InfoveaveFileParserVisitor = require('./InfoveaveFileParserVisitor').Infovea
 var grammarFileName = "InfoveaveFileParser.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u0016\\\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003\u0017\\\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
     "\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0003\u0002\u0003",
     "\u0002\u0006\u0002\u0019\n\u0002\r\u0002\u000e\u0002\u001a\u0003\u0002",
@@ -21,43 +21,43 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\t\u0003\n\u0003\n\u0003\n\u0003\n\u0003\n\u0006\nO\n\n\r\n\u000e\n",
     "P\u0003\u000b\u0003\u000b\u0003\u000b\u0003\u000b\u0003\u000b\u0006",
     "\u000bX\n\u000b\r\u000b\u000e\u000bY\u0003\u000b\u0002\u0002\f\u0002",
-    "\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0002\u0006\u0003\u0002\u0010",
-    "\u0011\u0004\u0002\u000b\u000b\u000f\u000f\u0006\u0002\b\b\u000e\u000e",
-    "\u0012\u0012\u0014\u0014\u0005\u0002\b\b\u0012\u0012\u0014\u0014\u0002",
+    "\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0002\u0006\u0003\u0002\u0011",
+    "\u0012\u0004\u0002\u000b\u000b\u0010\u0010\u0006\u0002\b\b\u000e\u000e",
+    "\u0013\u0013\u0015\u0015\u0005\u0002\b\b\u0013\u0013\u0015\u0015\u0002",
     "_\u0002\u0018\u0003\u0002\u0002\u0002\u0004\'\u0003\u0002\u0002\u0002",
     "\u0006+\u0003\u0002\u0002\u0002\b2\u0003\u0002\u0002\u0002\n8\u0003",
     "\u0002\u0002\u0002\f?\u0003\u0002\u0002\u0002\u000eC\u0003\u0002\u0002",
     "\u0002\u0010F\u0003\u0002\u0002\u0002\u0012I\u0003\u0002\u0002\u0002",
     "\u0014R\u0003\u0002\u0002\u0002\u0016\u0019\u0005\u0004\u0003\u0002",
-    "\u0017\u0019\u0007\u0016\u0002\u0002\u0018\u0016\u0003\u0002\u0002\u0002",
+    "\u0017\u0019\u0007\u0017\u0002\u0002\u0018\u0016\u0003\u0002\u0002\u0002",
     "\u0018\u0017\u0003\u0002\u0002\u0002\u0019\u001a\u0003\u0002\u0002\u0002",
     "\u001a\u0018\u0003\u0002\u0002\u0002\u001a\u001b\u0003\u0002\u0002\u0002",
     "\u001b\u001c\u0003\u0002\u0002\u0002\u001c\u001d\u0007\u0002\u0002\u0003",
     "\u001d\u0003\u0003\u0002\u0002\u0002\u001e(\u0005\b\u0005\u0002\u001f",
-    "(\u0005\f\u0007\u0002 (\u0005\n\u0006\u0002!(\u0007\u0013\u0002\u0002",
+    "(\u0005\f\u0007\u0002 (\u0005\n\u0006\u0002!(\u0007\u0014\u0002\u0002",
     "\"(\u0005\u000e\b\u0002#(\u0005\u0012\n\u0002$(\u0005\u0014\u000b\u0002",
     "%(\u0005\u0010\t\u0002&(\u0005\u0006\u0004\u0002\'\u001e\u0003\u0002",
     "\u0002\u0002\'\u001f\u0003\u0002\u0002\u0002\' \u0003\u0002\u0002\u0002",
     "\'!\u0003\u0002\u0002\u0002\'\"\u0003\u0002\u0002\u0002\'#\u0003\u0002",
     "\u0002\u0002\'$\u0003\u0002\u0002\u0002\'%\u0003\u0002\u0002\u0002\'",
-    "&\u0003\u0002\u0002\u0002()\u0003\u0002\u0002\u0002)*\u0007\u0016\u0002",
+    "&\u0003\u0002\u0002\u0002()\u0003\u0002\u0002\u0002)*\u0007\u0017\u0002",
     "\u0002*\u0005\u0003\u0002\u0002\u0002+,\u0007\u0004\u0002\u0002,-\u0007",
-    "\t\u0002\u0002-.\u0007\n\u0002\u0002./\u0007\u000f\u0002\u0002/0\u0007",
-    "\u000e\u0002\u000201\u0007\u000f\u0002\u00021\u0007\u0003\u0002\u0002",
-    "\u000223\u0007\u0003\u0002\u000234\u0007\u0014\u0002\u000246\t\u0002",
-    "\u0002\u000257\u0007\u000f\u0002\u000265\u0003\u0002\u0002\u000267\u0003",
+    "\t\u0002\u0002-.\u0007\n\u0002\u0002./\u0007\u0010\u0002\u0002/0\u0007",
+    "\u000e\u0002\u000201\u0007\u0010\u0002\u00021\u0007\u0003\u0002\u0002",
+    "\u000223\u0007\u0003\u0002\u000234\u0007\u0015\u0002\u000246\t\u0002",
+    "\u0002\u000257\u0007\u0010\u0002\u000265\u0003\u0002\u0002\u000267\u0003",
     "\u0002\u0002\u00027\t\u0003\u0002\u0002\u000289\u0007\u0005\u0002\u0002",
-    "9:\u0007\u0014\u0002\u0002:;\u0007\u000f\u0002\u0002;=\t\u0003\u0002",
+    "9:\u0007\u0015\u0002\u0002:;\u0007\u0010\u0002\u0002;=\t\u0003\u0002",
     "\u0002<>\u0007\u0006\u0002\u0002=<\u0003\u0002\u0002\u0002=>\u0003\u0002",
     "\u0002\u0002>\u000b\u0003\u0002\u0002\u0002?@\u0007\u0007\u0002\u0002",
-    "@A\u0007\u0014\u0002\u0002AB\t\u0002\u0002\u0002B\r\u0003\u0002\u0002",
+    "@A\u0007\u0015\u0002\u0002AB\t\u0002\u0002\u0002B\r\u0003\u0002\u0002",
     "\u0002CD\u0007\u0006\u0002\u0002DE\u0007\t\u0002\u0002E\u000f\u0003",
     "\u0002\u0002\u0002FG\u0007\f\u0002\u0002GH\u0007\t\u0002\u0002H\u0011",
     "\u0003\u0002\u0002\u0002IJ\u0007\f\u0002\u0002JK\u0007\u0003\u0002\u0002",
-    "KL\u0007\u0014\u0002\u0002LN\u0007\r\u0002\u0002MO\t\u0004\u0002\u0002",
+    "KL\u0007\u0015\u0002\u0002LN\u0007\r\u0002\u0002MO\t\u0004\u0002\u0002",
     "NM\u0003\u0002\u0002\u0002OP\u0003\u0002\u0002\u0002PN\u0003\u0002\u0002",
     "\u0002PQ\u0003\u0002\u0002\u0002Q\u0013\u0003\u0002\u0002\u0002RS\u0007",
-    "\f\u0002\u0002ST\u0007\u0007\u0002\u0002TU\u0007\u0014\u0002\u0002U",
+    "\f\u0002\u0002ST\u0007\u0007\u0002\u0002TU\u0007\u0015\u0002\u0002U",
     "W\u0007\r\u0002\u0002VX\t\u0005\u0002\u0002WV\u0003\u0002\u0002\u0002",
     "XY\u0003\u0002\u0002\u0002YW\u0003\u0002\u0002\u0002YZ\u0003\u0002\u0002",
     "\u0002Z\u0015\u0003\u0002\u0002\u0002\t\u0018\u001a\'6=PY"].join("");
@@ -69,12 +69,14 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [  ];
+var literalNames = [ null, null, null, null, null, null, null, null, null, 
+                     null, null, null, null, "';'" ];
 
 var symbolicNames = [ null, "RECORD", "SKIPLINE", "COLUMN", "IGNORE", "SUBRECORD", 
                       "EMPTYLINE", "LINE", "BOF", "EOL", "NEXT", "TILL", 
-                      "ENDOFFILE", "COLUMNIDENTIFIER", "BEGIN", "END", "SPECIALCHARWORD", 
-                      "COMMENT", "IDENTIFIER", "WHITESPACE", "NEWLINE" ];
+                      "ENDOFFILE", "SEMICOLON", "COLUMNIDENTIFIER", "BEGIN", 
+                      "END", "SPECIALCHARWORD", "COMMENT", "IDENTIFIER", 
+                      "WHITESPACE", "NEWLINE" ];
 
 var ruleNames =  [ "program", "line", "skipline", "record", "column", "subrecord", 
                    "ignoreline", "nextline", "nextrecord", "nextsubrecord" ];
@@ -110,14 +112,15 @@ InfoveaveFileParserParser.EOL = 9;
 InfoveaveFileParserParser.NEXT = 10;
 InfoveaveFileParserParser.TILL = 11;
 InfoveaveFileParserParser.ENDOFFILE = 12;
-InfoveaveFileParserParser.COLUMNIDENTIFIER = 13;
-InfoveaveFileParserParser.BEGIN = 14;
-InfoveaveFileParserParser.END = 15;
-InfoveaveFileParserParser.SPECIALCHARWORD = 16;
-InfoveaveFileParserParser.COMMENT = 17;
-InfoveaveFileParserParser.IDENTIFIER = 18;
-InfoveaveFileParserParser.WHITESPACE = 19;
-InfoveaveFileParserParser.NEWLINE = 20;
+InfoveaveFileParserParser.SEMICOLON = 13;
+InfoveaveFileParserParser.COLUMNIDENTIFIER = 14;
+InfoveaveFileParserParser.BEGIN = 15;
+InfoveaveFileParserParser.END = 16;
+InfoveaveFileParserParser.SPECIALCHARWORD = 17;
+InfoveaveFileParserParser.COMMENT = 18;
+InfoveaveFileParserParser.IDENTIFIER = 19;
+InfoveaveFileParserParser.WHITESPACE = 20;
+InfoveaveFileParserParser.NEWLINE = 21;
 
 InfoveaveFileParserParser.RULE_program = 0;
 InfoveaveFileParserParser.RULE_line = 1;

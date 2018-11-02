@@ -50,6 +50,7 @@ fragment NUMBER     : [0-9] ;
 fragment SPECIALCHAR: [[\].()<>/\\:#|!@$%^&*_+'",?~`-] ;
 fragment UNDERSCORE : [_] ;
 
+
 RECORD              : R E C O R D ;
 SKIPLINE            : S K I P ;
 COLUMN              : C O L U M N ;
@@ -62,7 +63,8 @@ EOL                 : E O L ;
 NEXT                : N E X T ;
 TILL                : T I L L ;
 ENDOFFILE           : E O F;
-COLUMNIDENTIFIER    : ((NUMBER)+|(NUMBER|SPECIALCHAR)+) ;
+SEMICOLON           : ';';
+COLUMNIDENTIFIER    : ((NUMBER)+|(NUMBER|SPECIALCHAR|SEMICOLON)+) ;
 
 BEGIN               : B E G I N ;
 END                 : E N D ;

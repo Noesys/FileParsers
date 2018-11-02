@@ -168,8 +168,8 @@ const ParseLineToContent = (lineText: string, currentLineIndex: number, currentT
     let dataMarkers: DataMarker[] = [];
     for (let i = 0; i < currentTree.length; i++) {
         if (currentTree[i].action === "Column") {
-            let beginIndex = FindIndexOfMarkerInLine(lineText, (<Column>currentTree[i]).begin.content);
-            let endIndex = FindIndexOfMarkerInLine(lineText, (<Column>currentTree[i]).end.content);
+            let beginIndex = FindIndexOfMarkerInLine(lineText, (<Column>currentTree[i]).begin.content, true);
+            let endIndex = FindIndexOfMarkerInLine(lineText, (<Column>currentTree[i]).end.content, false);
             let title = (<Column>currentTree[i]).name.content;
             content[title] = lineText.substring(beginIndex, endIndex);
             dataMarkers.push(createDataMarker("Column", currentLineIndex + 1, currentLineIndex + 1, beginIndex + 1, endIndex + 1, title));
@@ -185,8 +185,12 @@ const ParseLineToContent = (lineText: string, currentLineIndex: number, currentT
 }
 
 
-const FindIndexOfMarkerInLine = (lineText: string, marker: string): number => {
+const FindIndexOfMarkerInLine = (lineText: string, marker: string, begin: boolean): number => {
     let markerSpecialChars = marker.replace(/[0-9]*/g,"");
+    let number = marker.replace(markerSpecialChars, "");
+    if (number != '') {
+        number = parseInt(number);
+    }
     if (markerSpecialChars.length === 0) {
         return parseInt(marker);
     }
@@ -194,7 +198,11 @@ const FindIndexOfMarkerInLine = (lineText: string, marker: string): number => {
         return lineText.length;
     }
     let indeces = FindAllIndexesOfChar(lineText, markerSpecialChars);
-    return indeces[0];
+    let index = indeces[number - 1];
+    if (begin === true) {
+        index += 1;
+    }
+    return index;
 }
 
 const FindAllIndexesOfChar = (lineText: string, char: string): number[] => {

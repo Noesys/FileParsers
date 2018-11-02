@@ -6,6 +6,7 @@
   "dependencies": {
     "antd": "^3.6.3",
     "antlr4": "^4.7.1",
+    "cross-env": "^5.2.0",
     "webpack-dev-server": "^3.1.4"
   },
   "devDependencies": {
@@ -32,7 +33,7 @@
   },
   "scripts": {
     "develop": "webpack-dev-server --config=webpack.config.js --mode=development",
-    "build": "NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "build:server": "tsc --module system FileContentParser.ts"
   },
   "author": "Naresh Jois<naresh@noesyssoftware.com>",
