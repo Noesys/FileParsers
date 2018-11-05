@@ -60,6 +60,7 @@ export interface Column {
 export interface IgnoreLine {
     action: "IgnoreLine";
     line: number;
+    till?: string;
 }
 
 export interface NextLine {

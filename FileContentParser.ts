@@ -1,7 +1,9 @@
 import { filter, parseInt, union, take, drop } from "lodash";
-import { ParseTreeElement, RecordElement, SkipLine, Column, DataMarker, ParsedResult } from "./interfaces";
-export const ParseTextUsingTree = (text: string, tree: ParseTreeElement[]): ParsedResult => {
-    // If there are more than one EOL or one Ignore Line or SubRecord then
+import { ParseTreeElement, RecordElement, SkipLine, Column, DataMarker, ParsedResult, IgnoreLine } from "./interfaces";
+export const ParseTextUsingTree: (text: string, tree: ParseTreeElement[]) => ParsedResult  = 
+    (text: string, tree: ParseTreeElement[]): ParsedResult => {
+
+    // if there are more than one EOL or one Ignore Line or SubRecord then
     // the datamarkers must be for all lines,
     // otherwise markers on one line should be ok
 
@@ -19,12 +21,12 @@ export const ParseTextUsingTree = (text: string, tree: ParseTreeElement[]): Pars
     let currentLineIndex = 0;
 
     let currentIndex = 0;
-    
+
     let lastPossibleLineIndex = textAsArray.length - 1;
 
     let recordName = "";
     let dataMarkers: DataMarker[] = [];
-    
+
     // if there are ignore lines till record begin 
     if(tree[currentIndex].action === "SkipLine") {
         let noOfBeginLinesToSkip = parseInt((<SkipLine>tree[currentIndex]).begin.content);
@@ -105,6 +107,9 @@ const ParseOneRecord = (recordTree: ParseTreeElement[], currentLineIndex: number
         if (currentTree[0].action !== "NextLine") {
             result.linesParsed += 1;
             currentLineIndex += 1;
+        }
+        if (currentTree[0].action === "IgnoreLine" && (currentTree[0] as IgnoreLine).till != null) {
+            result.linesParsed += textAsArray.length - currentLineIndex;
         }
     }
     return result;

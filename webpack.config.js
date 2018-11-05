@@ -20,7 +20,6 @@ var developmentPlugins = [
 var productionPlugins = [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({ "process.env": { "NODE_ENV": JSON.stringify("production") } }),
-    new UglifyJsPlugin({ sourceMap : false })
 ];
 
 
@@ -39,6 +38,16 @@ module.exports = {
     entry: entry,
     resolve: {
         extensions: [".js", ".ts", ".tsx"],
+    },
+    optimization: {
+        noEmitOnErrors: true,
+        minimizer: [
+            new UglifyJsPlugin({
+              cache: true,
+              parallel: true,
+              sourceMap: false // set to true if you want JS source maps
+            }),
+          ]
     },
     devServer: {
         contentBase: path.join(__dirname, "build"),

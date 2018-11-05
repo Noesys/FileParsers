@@ -1,32 +1,33 @@
 /// <reference path="./interfaces.d.ts" />
-import antlr4 from 'antlr4/index';
+import antlr4 from "antlr4/index";
 import Lexer from "./output/InfoveaveFileParserLexer.js";
 import Parser from "./output/InfoveaveFileParserParser.js";
 import Visitor from "./output/InfoveaveFileParserVisitor";
 import ErrorListner from "./output/InfoveaveFileParserErrorListener";
 import validateAndTransformTree from "./treeValidation";
-import { RecordElement, SubRecordElement, SkipLine, Column, NextRecordElement, NextSubRecordElement, IgnoreLine, NextLine } from "./interfaces";
-export const ParseCode = function (input: string) {
-    var chars = new antlr4.InputStream(input);
-    var lexer = new Lexer.InfoveaveFileParserLexer(chars);
-    var tokens = new antlr4.CommonTokenStream(lexer);
+import { RecordElement, SubRecordElement, SkipLine, Column, NextRecordElement,
+    NextSubRecordElement, IgnoreLine, NextLine } from "./interfaces";
+export const ParseCode: (input:string) => { errors: any[], tree: any } = function (input: string): { errors: any[], tree: any } {
+    var chars: any = new antlr4.InputStream(input);
+    var lexer: any = new Lexer.InfoveaveFileParserLexer(chars);
+    var tokens: any = new antlr4.CommonTokenStream(lexer);
     var parser: any = new Parser.InfoveaveFileParserParser(tokens);
     parser.removeErrorListeners();
-    var errorListener = new ErrorListner.InfoveaveFileParserErrorListner();
+    var errorListener: any = new ErrorListner.InfoveaveFileParserErrorListner();
     parser.buildParseTrees = true;
-    var parseError = null;
+    var parseError: any = null;
     parser.addErrorListener(errorListener);
-    var tree = parser.program();
+    var tree: any = parser.program();
 
-    Visitor.InfoveaveFileParserVisitor.prototype.visitProgram = function (ctx) {
-        let result = this.visitChildren(ctx);
+    Visitor.InfoveaveFileParserVisitor.prototype.visitProgram = function (ctx: any): any {
+        let result: any = this.visitChildren(ctx);
         return result.filter(r => r != null);
     };
 
     Visitor.InfoveaveFileParserVisitor.prototype.visitRecord =  (ctx): RecordElement => {
-        let lineCount = 0;
-        if (ctx.children[3] != null && !isNaN(parseInt(ctx.children[3].getText()))) {
-            lineCount = parseInt(ctx.children[3].getText());
+        let lineCount: number = 0;
+        if (ctx.children[3] != null && !isNaN(parseInt(ctx.children[3].getText(), 10))) {
+            lineCount = parseInt(ctx.children[3].getText(), 10);
         }
         return {
             line: ctx.getRuleContext().start.line,
@@ -43,7 +44,7 @@ export const ParseCode = function (input: string) {
             },
             lineCount: lineCount,
         };
-    }
+    };
 
     Visitor.InfoveaveFileParserVisitor.prototype.visitSubrecord = (ctx): SubRecordElement => {
         return {
@@ -60,7 +61,7 @@ export const ParseCode = function (input: string) {
                 end: ctx.getRuleContext().children[2].symbol.column + ctx.children[2].getText().length
             }
         };
-    }
+    };
 
     Visitor.InfoveaveFileParserVisitor.prototype.visitSkipline = (ctx): SkipLine => {
         return {
@@ -76,12 +77,12 @@ export const ParseCode = function (input: string) {
                 begin: ctx.getRuleContext().children[5].symbol.column,
                 end: ctx.getRuleContext().children[5].symbol.column + ctx.children[5].getText().length
             }
-        }
-    }
+        };
+    };
 
 
-    Visitor.InfoveaveFileParserVisitor.prototype.visitLine = function (ctx) {
-        let result = this.visitChildren(ctx);
+    Visitor.InfoveaveFileParserVisitor.prototype.visitLine = function (ctx: any): any {
+        let result: any = this.visitChildren(ctx);
         return result[0];
     };
 
@@ -106,23 +107,24 @@ export const ParseCode = function (input: string) {
             },
             canIgnore : (ctx.getRuleContext().children[4] != null && ctx.getRuleContext().children[4].getText() === "IGNORE")
         };
-    }
+    };
 
-    Visitor.InfoveaveFileParserVisitor.prototype.visitIgnoreline = (ctx) : IgnoreLine => {
+    Visitor.InfoveaveFileParserVisitor.prototype.visitIgnoreline = (ctx): IgnoreLine => {
         return {
             line: ctx.getRuleContext().start.line,
-            action: "IgnoreLine"
+            action: "IgnoreLine",
+            till: ctx.children[2] != null ? ctx.children[2].getText() : null,
         };
-    }
+    };
 
-    Visitor.InfoveaveFileParserVisitor.prototype.visitNextline = function(ctx): NextLine {
+    Visitor.InfoveaveFileParserVisitor.prototype.visitNextline = function(ctx: any): NextLine {
         return {
             line: ctx.getRuleContext().start.line,
             action: "NextLine"
         };
-    };   
+    };
 
-    Visitor.InfoveaveFileParserVisitor.prototype.visitNextrecord = (ctx) : NextRecordElement =>  {
+    Visitor.InfoveaveFileParserVisitor.prototype.visitNextrecord = (ctx: any): NextRecordElement =>  {
         let result : NextRecordElement = {
             line: ctx.getRuleContext().start.line,
             action: "NextRecord",
@@ -133,17 +135,17 @@ export const ParseCode = function (input: string) {
             },
             till: []
         };
-        for(let i = 4; i < ctx.children.length; i ++) {
+        for(let i: number = 4; i < ctx.children.length; i ++) {
             result.till.push({
                 content: ctx.children[i].getText(),
                 begin: ctx.getRuleContext().children[i].symbol.column,
                 end: ctx.getRuleContext().children[i].symbol.column + ctx.children[i].getText().length
-            })
+            });
         }
         return result;
     };
 
-    Visitor.InfoveaveFileParserVisitor.prototype.visitNextsubrecord = (ctx) : NextSubRecordElement => {
+    Visitor.InfoveaveFileParserVisitor.prototype.visitNextsubrecord = (ctx): NextSubRecordElement => {
         let result: NextSubRecordElement = {
             line: ctx.getRuleContext().start.line,
             action: "NextSubRecord",
@@ -154,28 +156,28 @@ export const ParseCode = function (input: string) {
             },
             till: []
         };
-        for(let i = 4; i < ctx.children.length; i ++) {
+        for(let i: number = 4; i < ctx.children.length; i ++) {
             result.till.push({
                 content: ctx.children[i].getText(),
                 begin: ctx.getRuleContext().children[i].symbol.column,
                 end: ctx.getRuleContext().children[i].symbol.column + ctx.children[i].getText().length
-            })
+            });
         }
         return result;
     };
 
-    var visitor = new Visitor.InfoveaveFileParserVisitor();
-    var result;
+    var visitor: any = new Visitor.InfoveaveFileParserVisitor();
+    var result: any;
     try {
         result = visitor.visitProgram(tree);
     } catch (e) {
         console.log(e);
         // errorListener.errors.push({ line: 1, column: 1, message: "Unable to Parse Expression" });
-    };
-    let c = {
+    }
+    let c: any = {
         errors: errorListener.errors,
         tree: result
-    }
+    };
     c = validateAndTransformTree(c);
     return c;
-}
+};
